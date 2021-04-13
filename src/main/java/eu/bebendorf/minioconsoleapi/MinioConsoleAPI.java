@@ -93,6 +93,10 @@ public class MinioConsoleAPI extends HTTPClient {
         errorCheck(delete("/buckets/" + name));
     }
 
+    public void updateBucketQuota(String name, BucketQuota quota) {
+        errorCheck(put("/buckets/" + name + "/quota", quota));
+    }
+
     public User createUser(String accessKey, String secretKey, String... groups) {
         return errorCheck(post("/users", new CreateUserRequest(accessKey, secretKey, groups))).object(User.class);
     }

@@ -1,6 +1,6 @@
 package eu.bebendorf.minioconsoleapi.request;
 
-import com.google.gson.annotations.SerializedName;
+import eu.bebendorf.minioconsoleapi.model.BucketQuota;
 
 import java.util.Locale;
 
@@ -9,7 +9,7 @@ public class CreateBucketRequest {
     private String name;
     private boolean locking = false;
     private boolean versioning = false;
-    private Quota quota;
+    private BucketQuota quota;
     private Retention retention;
 
     public CreateBucketRequest(String name) {
@@ -26,7 +26,7 @@ public class CreateBucketRequest {
         return this;
     }
 
-    public CreateBucketRequest setQuota(Quota quota) {
+    public CreateBucketRequest setQuota(BucketQuota quota) {
         this.quota = quota;
         return this;
     }
@@ -34,35 +34,6 @@ public class CreateBucketRequest {
     public CreateBucketRequest setRetention(Retention retention) {
         this.retention = retention;
         return this;
-    }
-
-    public static class Quota {
-
-        private boolean enabled;
-        private long amount;
-        @SerializedName("quota_type")
-        private String quotaType;
-
-        public Quota setEnabled(boolean enabled) {
-            this.enabled = enabled;
-            return this;
-        }
-
-        public Quota setAmount(long amount) {
-            this.amount = amount;
-            return this;
-        }
-
-        public Quota setType(Quota.Type type) {
-            this.quotaType = type.name().toLowerCase(Locale.ROOT);
-            return this;
-        }
-
-        public enum Type {
-            HARD,
-            FIFO
-        }
-
     }
 
     public static class Retention {
