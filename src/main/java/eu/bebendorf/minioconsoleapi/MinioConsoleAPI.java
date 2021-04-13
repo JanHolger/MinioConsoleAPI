@@ -188,7 +188,7 @@ public class MinioConsoleAPI extends HTTPClient {
     }
 
     private HTTPRequest errorCheck(HTTPRequest request) {
-        if(request.status() >= 300)
+        if(request.status() < 200 || request.status() >= 300)
             throw new MinioConsoleAPIException(request);
         return request;
     }
