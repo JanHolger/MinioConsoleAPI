@@ -1,6 +1,6 @@
 package eu.bebendorf.minioconsoleapi.model;
 
-import com.google.gson.annotations.SerializedName;
+import org.javawebstack.abstractdata.mapper.annotation.MapperOptions;
 
 import java.util.Locale;
 
@@ -8,7 +8,7 @@ public class BucketQuota {
 
     private boolean enabled;
     private long amount;
-    @SerializedName("quota_type")
+    @MapperOptions(name = "quota_type")
     private String quotaType;
 
     public BucketQuota setEnabled(boolean enabled) {

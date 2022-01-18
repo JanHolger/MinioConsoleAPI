@@ -1,6 +1,6 @@
 package eu.bebendorf.minioconsoleapi.response;
 
-import com.google.gson.annotations.SerializedName;
+import org.javawebstack.abstractdata.mapper.annotation.MapperOptions;
 
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 public class GetConfigResponse {
 
     private String name;
-    @SerializedName("key_values")
+    @MapperOptions(name = "key_values")
     private KeyValue[] keyValues;
 
     public String getName() {

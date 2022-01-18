@@ -1,13 +1,13 @@
 package eu.bebendorf.minioconsoleapi.model;
 
-import com.google.gson.annotations.SerializedName;
+import org.javawebstack.abstractdata.mapper.annotation.MapperOptions;
 
 import java.util.Date;
 
 public class BucketObject {
 
     private String name;
-    @SerializedName("last_modified")
+    @MapperOptions(name = "last_modified")
     private Date lastModified;
     private Long size;
 

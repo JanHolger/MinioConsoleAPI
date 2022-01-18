@@ -1,12 +1,12 @@
 package eu.bebendorf.minioconsoleapi.request;
 
-import com.google.gson.annotations.SerializedName;
+import org.javawebstack.abstractdata.mapper.annotation.MapperOptions;
 
 public class ChangePasswordRequest {
 
-    @SerializedName("old_secret_key")
+    @MapperOptions(name = "old_secret_key")
     private String oldSecretKey;
-    @SerializedName("new_secret_key")
+    @MapperOptions(name = "new_secret_key")
     private String newSecretKey;
 
     public ChangePasswordRequest(String oldSecretKey, String newSecretKey) {

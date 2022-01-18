@@ -1,12 +1,12 @@
 package eu.bebendorf.minioconsoleapi.model;
 
-import com.google.gson.annotations.SerializedName;
+import org.javawebstack.abstractdata.mapper.annotation.MapperOptions;
 
 import java.util.Date;
 
 public class Bucket {
 
-    @SerializedName("creation_date")
+    @MapperOptions(name = "creation_date")
     private Date creationDate;
     private String name;
     private Long size;
